@@ -31,13 +31,13 @@ class CopyFile{
             let changeDirectory = `./dist/${fileName}/${pathName}`;// 多页面JS和css文件地存放址
             // js的公共js不转移
             if(!fileName.includes('chunk-vendors')){
-                fs.exists( changeDirectory, ( exists )=>{
-                    if( exists ){// 已存在
-                       $this.callbackFile(filepath,`${changeDirectory}/${copyName}`)
-                    } else{// 不存在
-                        fs.mkdir( changeDirectory, function(){
+                fs.access(changeDirectory, fs.constants.F_OK, (err) => {
+                    if(err){
+                        fs.mkdir( changeDirectory, ()=>{
                             $this.callbackFile(filepath,`${changeDirectory}/${copyName}`)
                         });
+                    }else{
+                        $this.callbackFile(filepath,`${changeDirectory}/${copyName}`)
                     }
                 });
             }
