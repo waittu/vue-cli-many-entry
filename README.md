@@ -1,4 +1,4 @@
-# many-page
+# 多入口页面
 
 ## Project setup
 ```
@@ -26,4 +26,3 @@ yarn run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
