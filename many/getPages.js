@@ -9,7 +9,6 @@ module.exports.pages =  ()=>{
         fs.exists(`src/views/${fileName}/${fileName}.html`,(data)=>{
             templateHtml =data?`src/views/${fileName}/${fileName}.html`: 'index.html'
         })
-        console.log(fileName)
         pages[fileName] = {
             entry: `src/views/${fileName}/${fileName}.js`,
             template: templateHtml,
