@@ -9,5 +9,7 @@ export default {
 }
 </script>
 <style lang="less">
-
+.warp{
+    font-size: 50px
+}
 </style>
