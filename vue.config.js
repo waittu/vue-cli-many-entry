@@ -4,6 +4,18 @@ function resolve(dir) {
 }
 const pageMethod  = require('./many/getPages').pages()
 module.exports = {
+    chainWebpack: config => {
+        if (process.env.NODE_ENV === 'production') {
+            if(process.env.NODE_REPORT==='report'){
+                config
+                    .plugin('webpack-bundle-analyzer')
+                    .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+                    .end();
+            }
+          } else {
+
+          }
+    },
     // 基本配置
     configureWebpack:{
         resolve:{
@@ -22,5 +34,5 @@ module.exports = {
     devServer:{
         port:9922
     },
-    pages:pageMethod
+    pages:pageMethod,
 }

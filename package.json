@@ -6,7 +6,8 @@
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build && node ./many/copyFile.js",
     "lint": "vue-cli-service lint",
-    "test": "node ./many/copyFile.js"
+    "test": "node ./many/copyFile.js",
+    "report": "cross-env NODE_REPORT=report  npm run build"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -17,12 +18,14 @@
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "glob": "^7.1.4",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "eslintConfig": {
     "root": true,
